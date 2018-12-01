@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - 'dir'
+
+artifacts:
+  files:
+    - dist
+  discard-paths: yes
+
+  post_build:
+    commands:
+      - echo "Build success, artifacted files"
+
+artifacts:
+  files:
+    - dist
+  discard-paths: yes
