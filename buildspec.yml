@@ -3,7 +3,9 @@ phases:
   build:
     commands:
       - 'dir'
-      - 'C:\unreal\Engine\Build\BatchFiles\RunUAT.bat BuildCookRun -project=%CODEBUILD_SRC_DIR%\Small.uproject -noP4 -platform=Win64 -clientconfig=Development -allmaps -build -stage -pak -archive -archivedirectory="dist" -cookonthefly'
+      - 'dir C:\Users\ContainerAdministrator\AppData\Local\Temp\C+unreal'
+      - 'rd -r C:\Users\ContainerAdministrator\AppData\Local\Temp\C+unreal'
+      - 'C:\unreal\Engine\Build\BatchFiles\RunUAT.bat BuildCookRun -project="%CODEBUILD_SRC_DIR%\Small.uproject" -noP4 -platform=Win64 -clientconfig=Development -allmaps -build -stage -pak -archive -archivedirectory="dist" -cookonthefly'
 
 artifacts:
   files:
