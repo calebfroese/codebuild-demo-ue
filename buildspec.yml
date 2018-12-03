@@ -2,9 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - 'dir'
-      - 'Remove-Item -path C:\Users\ContainerAdministrator\AppData\Local\Temp -Recurse -Force -EA SilentlyContinue -Verbose'
-      - 'C:\unreal\Engine\Build\BatchFiles\RunUAT.bat BuildCookRun -project="%CODEBUILD_SRC_DIR%\Small.uproject" -noP4 -platform=Win64 -clientconfig=Development -allmaps -build -stage -pak -archive -archivedirectory="dist" -cookonthefly -verbose'
+      - 'C:\unreal\Engine\Build\BatchFiles\RunUAT.bat BuildCookRun -project="%CODEBUILD_SRC_DIR%\Small.uproject" -noP4 -platform=Win64 -clientconfig=Development -allmaps -build -stage -pak -archive -archivedirectory="%CODEBUILD_SRC_DIR%\dist" -cookonthefly -verbose'
 
 artifacts:
   files:
