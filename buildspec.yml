@@ -3,7 +3,7 @@ phases:
   build:
     commands:
       - 'C:\unreal\Engine\Build\BatchFiles\RunUAT.bat BuildCookRun -project="%CODEBUILD_SRC_DIR%\Small.uproject" -noP4 -platform=Win64 -clientconfig=Development -allmaps -build -stage -pak -archive -archivedirectory="%CODEBUILD_SRC_DIR%\dist" -cookonthefly -verbose'
-      - 'Compress-Archive -Path %CODEBUILD_SRC_DIR%\dist\* -CompressionLevel Fastest -DestinationPath %CODEBUILD_SRC_DIR%\packaged'
+      - 'Compress-Archive -Path dist\* -CompressionLevel Fastest -DestinationPath packaged'
 
 artifacts:
   files:
